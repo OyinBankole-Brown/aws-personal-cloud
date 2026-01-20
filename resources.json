@@ -1,0 +1,15 @@
+{
+    "buckets": {
+        "raw": {
+            "name": "cloud-uploads-raw-74de04ff",
+            "arn": "arn:aws:s3:::cloud-uploads-raw-74de04ff"
+        },
+        "processed": {
+            "name": "cloud-storage-processed-74de04ff",
+            "arn": "arn:aws:s3:::cloud-storage-processed-74de04ff"
+        }
+    },
+    "iam_policy": {
+        "arn": "arn:aws:iam::615763501641:policy/PersonalCloudS3Access"
+    }
+}
