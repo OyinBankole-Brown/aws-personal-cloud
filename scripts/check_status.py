@@ -2,7 +2,7 @@ import boto3
 import os
 
 def load_env():
-    env_path = os.path.join(os.path.dirname(__file__), '.env')
+    env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env')
     if os.path.exists(env_path):
         with open(env_path, 'r') as f:
             for line in f:

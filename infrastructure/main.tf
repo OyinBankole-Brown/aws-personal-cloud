@@ -34,7 +34,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "raw_bucket_lifecycle" {
       storage_class = "GLACIER"
     }
     
-    # Optional: Expiration? Prompt didn't ask, just "move to Glacier".
+    # Lifecycle Policy: Transition to Glacier after 30 days
   }
 }
 

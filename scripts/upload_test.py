@@ -6,7 +6,8 @@ from botocore.exceptions import ClientError, NoCredentialsError
 
 # Load environment variables (basic loader to avoid dependency on python-dotenv)
 def load_env():
-    env_path = os.path.join(os.path.dirname(__file__), '.env')
+    # Look for .env in the parent directory
+    env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env')
     if os.path.exists(env_path):
         with open(env_path, 'r') as f:
             for line in f:
@@ -46,7 +47,7 @@ def test_s3_upload(bucket_name):
         return False
 
     # 3. Generate URL (mocking structure since it's private by default, but verifying path)
-    # Note: Presigned URL would be better for actual access, but prompt asks for "S3 URL".
+    # Generate S3 URL
     # Standard format: https://bucket-name.s3.region.amazonaws.com/key
     region = os.environ.get('AWS_REGION', 'us-east-1')
     s3_url = f"https://{bucket_name}.s3.{region}.amazonaws.com/{filename}"

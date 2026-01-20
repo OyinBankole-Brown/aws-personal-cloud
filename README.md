@@ -23,15 +23,13 @@ A serverless personal cloud storage solution built with AWS and Terraform.
    ```
 3. Initialize Terraform:
    ```bash
+   cd infrastructure
    terraform init
-   ```
-4. Apply the configuration:
-   ```bash
    terraform apply
    ```
 
 ## Usage
 Use the `upload_test.py` script to verify uploads:
 ```bash
-python upload_test.py
+python scripts/upload_test.py <bucket_name>
 ```
